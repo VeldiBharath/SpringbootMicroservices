@@ -1,6 +1,6 @@
 name: 'spring-boot-microservices'
 services:
-  catalog-db:
+  catalog-db: #helps spin up a container for postgres catalog-db, this can be different for different databases
     image: postgres:16-alpine
     container_name: catalog-db
     environment:
@@ -17,4 +17,4 @@ services:
     deploy:
       resources:
         limits:
-          memory: 500m
+          memory: 500m #m here means Mebibytes 1 MiB (mebibyte) = 1,048,576 bytes

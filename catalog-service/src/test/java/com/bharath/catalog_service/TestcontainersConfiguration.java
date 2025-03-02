@@ -11,12 +11,17 @@ class TestcontainersConfiguration {
 
 	@Bean
 	@ServiceConnection
-	//when we add test containers in spring initializer, this helps in spin up a docker container locally using the
-	//current configuration
-	//The postgres:16-alpine Docker image is an official lightweight PostgresSQL 16 container based on Alpine Linux.
-	//For Development & Testing: You can skip docker-compose.yml since Testcontainers will handle the database
+	//1. when we add test containers in spring initializer, this helps in spin up a docker container locally using the
+	//current configuration. //Keep docker open it spins up a container for us
+
+	//2. The postgres:16-alpine Docker image is an official lightweight PostgresSQL 16 container based on Alpine Linux.
+
+	//3. For Development & Testing: You can skip docker-compose.yml since Testcontainers will handle the database
 		// dynamically. Just ensure Docker Desktop is running.
-		//For Deployment & Running in Docker: Use Dockerfile to package your app and docker-compose.yml to manage services.
+
+		//4. For Deployment & Running in Docker: Use Dockerfile to package your app and docker-compose.yml to manage
+		// services. so we create a deployment package and docker compose file at root level
+
 	PostgreSQLContainer<?> postgresContainer() {
 		return new PostgreSQLContainer<>(DockerImageName.parse("postgres:16-alpine"));
 	}

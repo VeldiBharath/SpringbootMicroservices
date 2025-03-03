@@ -1,14 +1,12 @@
 package com.bharath.catalog_service;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 
 
-@SpringBootTest
-@Import(TestcontainersConfiguration.class)
-class CatalogServiceApplicationTests {
 
+class CatalogServiceApplicationTests extends AbstractIT{
+
+	//this only checks if the application is starting or not
 	@Test
 	void contextLoads() {
 	}

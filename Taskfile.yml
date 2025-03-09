@@ -76,7 +76,6 @@ tasks:
   restart:
     cmds:
       - task: stop
-      - task: sleep
       - task: start
 
   sleep:

@@ -8,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service //represents this is a service
 @Transactional //this makes this service transactional since we deal with database, to maintain rollbacks if exceptions occur
@@ -53,5 +55,9 @@ public class ProductService {
                 productsPage.isLast(),
                 productsPage.hasNext(),
                 productsPage.hasPrevious());
+    }
+
+    public Optional<Product> getProductByCode(String code){
+        return productRepository.findByCode(code).map(ProductMapper::toProduct);
     }
 }

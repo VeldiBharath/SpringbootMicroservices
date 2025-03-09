@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 @Entity //as this is boiler plate of schema
 @Table(name = "products") //we are using products table from postgresql
-class ProductEntity {
+public class ProductEntity {
 
     //to generate seq, we already have product_id_seq in our db so we use that as generator
     @Id

@@ -19,6 +19,7 @@
   <!-- Important: This defines child modules inside the parent -->
   <modules>
     <module>catalog-service</module>
+    <module>order-service</module>
   </modules>
 
   <dependencies>
